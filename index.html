@@ -514,6 +514,427 @@
             color: var(--gray-light);
         }
 
+        /* Energy Pattern Styles */
+        .energy-pattern {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: rgba(14, 138, 110, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .building {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .floor {
+            height: 50px;
+            background-color: #f0f4f8;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .window {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(37, 99, 235, 0.2);
+            border-radius: 2px;
+            transition: all 0.5s ease;
+        }
+
+        .window.w1 { animation: windowGlow 3s infinite 0.5s; }
+        .window.w2 { animation: windowGlow 3s infinite 1s; }
+        .window.w3 { animation: windowGlow 3s infinite 1.5s; }
+
+        @keyframes windowGlow {
+            0%, 100% { background-color: rgba(37, 99, 235, 0.2); }
+            50% { background-color: rgba(14, 138, 110, 0.6); }
+        }
+
+        .roof {
+            width: 220px;
+            height: 30px;
+            background-color: #0e8a6e;
+            margin: 0 auto;
+            border-radius: 4px 4px 0 0;
+            transform: translateX(-10px);
+        }
+
+        .energy-waves {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .wave {
+            position: absolute;
+            border: 2px dashed rgba(14, 138, 110, 0.3);
+            border-radius: 50%;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+        }
+
+        .wave-1 {
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            animation: waveExpand 4s infinite ease-out;
+        }
+
+        .wave-2 {
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            animation: waveExpand 4s infinite 1s ease-out;
+        }
+
+        .wave-3 {
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            animation: waveExpand 4s infinite 2s ease-out;
+        }
+
+        @keyframes waveExpand {
+            0% {
+                width: 50px;
+                height: 50px;
+                opacity: 0.8;
+            }
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+            }
+        }
+
+        .energy-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .dot-1 { top: 20%; left: 30%; animation: dotFloat 3s infinite 0.2s; }
+        .dot-2 { top: 30%; left: 70%; animation: dotFloat 3s infinite 0.7s; }
+        .dot-3 { top: 50%; left: 20%; animation: dotFloat 3s infinite 1.2s; }
+        .dot-4 { top: 70%; left: 80%; animation: dotFloat 3s infinite 1.7s; }
+        .dot-5 { top: 25%; left: 50%; animation: dotFloat 3s infinite 2.2s; }
+        .dot-6 { top: 60%; left: 40%; animation: dotFloat 3s infinite 2.7s; }
+        .dot-7 { top: 80%; left: 30%; animation: dotFloat 3s infinite 3.2s; }
+        .dot-8 { top: 40%; left: 60%; animation: dotFloat 3s infinite 3.7s; }
+
+        @keyframes dotFloat {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+
+        .solar-panel {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 100px;
+            height: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px;
+            transform: rotate(-10deg);
+        }
+
+        .panel-section {
+            background-color: #2563eb;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-section::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: panelShine 3s infinite linear;
+        }
+
+        @keyframes panelShine {
+            0% {
+                top: -100%;
+                left: -100%;
+            }
+            100% {
+                top: 100%;
+                left: 100%;
+            }
+        }
+
+        /* About Section Abstract Visual */
+        .about-visual {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: rgba(14, 138, 110, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .abstract-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            opacity: 0.7;
+        }
+
+        .grid-line {
+            background-color: rgba(14, 138, 110, 0.05);
+        }
+
+        .grid-line-h {
+            height: 1px;
+            width: 100%;
+            position: absolute;
+        }
+
+        .grid-line-v {
+            width: 1px;
+            height: 100%;
+            position: absolute;
+        }
+
+        .abstract-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            opacity: 0.1;
+            transform-origin: center;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 15s infinite alternate ease-in-out;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            left: 30%;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            animation: pulse 12s infinite alternate-reverse ease-in-out;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 25%;
+            right: 20%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            animation: pulse 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.2) translate(-10px, 10px);
+                opacity: 0.2;
+            }
+            100% {
+                transform: scale(1) translate(10px, -10px);
+                opacity: 0.1;
+            }
+        }
+
+        .energy-flow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .flow-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                rgba(14, 138, 110, 0) 0%, 
+                rgba(14, 138, 110, 0.5) 50%, 
+                rgba(14, 138, 110, 0) 100%);
+            animation: flowAnimation 4s infinite linear;
+        }
+
+        .flow-line-1 {
+            width: 200px;
+            top: 30%;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .flow-line-2 {
+            width: 150px;
+            top: 45%;
+            left: -150px;
+            animation-delay: 1s;
+        }
+
+        .flow-line-3 {
+            width: 180px;
+            top: 60%;
+            left: -180px;
+            animation-delay: 2s;
+        }
+
+        .flow-line-4 {
+            width: 120px;
+            top: 75%;
+            left: -120px;
+            animation-delay: 3s;
+        }
+
+        @keyframes flowAnimation {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(calc(100vw + 200px));
+                opacity: 0;
+            }
+        }
+
+        .abstract-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            opacity: 0;
+        }
+
+        .dot-1 { top: 20%; left: 30%; animation: fadeInOut 3s infinite 0.2s; }
+        .dot-2 { top: 30%; left: 70%; animation: fadeInOut 3s infinite 0.7s; }
+        .dot-3 { top: 50%; left: 20%; animation: fadeInOut 3s infinite 1.2s; }
+        .dot-4 { top: 70%; left: 80%; animation: fadeInOut 3s infinite 1.7s; }
+        .dot-5 { top: 25%; left: 50%; animation: fadeInOut 3s infinite 2.2s; }
+        .dot-6 { top: 60%; left: 40%; animation: fadeInOut 3s infinite 2.7s; }
+        .dot-7 { top: 80%; left: 30%; animation: fadeInOut 3s infinite 3.2s; }
+        .dot-8 { top: 40%; left: 60%; animation: fadeInOut 3s infinite 3.7s; }
+        .dot-9 { top: 35%; left: 25%; animation: fadeInOut 3s infinite 4.2s; }
+        .dot-10 { top: 65%; left: 75%; animation: fadeInOut 3s infinite 4.7s; }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.8; }
+        }
+
+        .abstract-bars {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            height: 100px;
+            align-items: flex-end;
+        }
+
+        .bar {
+            width: 8px;
+            background-color: var(--primary);
+            border-radius: 4px;
+            opacity: 0.7;
+        }
+
+        .bar-1 { height: 40%; animation: barGrow 3s infinite 0.1s; }
+        .bar-2 { height: 60%; animation: barGrow 3s infinite 0.3s; }
+        .bar-3 { height: 80%; animation: barGrow 3s infinite 0.5s; }
+        .bar-4 { height: 70%; animation: barGrow 3s infinite 0.7s; }
+        .bar-5 { height: 90%; animation: barGrow 3s infinite 0.9s; }
+        .bar-6 { height: 50%; animation: barGrow 3s infinite 1.1s; }
+        .bar-7 { height: 75%; animation: barGrow 3s infinite 1.3s; }
+
+        @keyframes barGrow {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.2); }
+        }
+
         /* Responsive styles */
         @media (max-width: 992px) {
             .hero-content, .about-content, .contact-content {
@@ -612,7 +1033,37 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/placeholder.svg?height=400&width=500" alt="Smart building energy management system">
+                    <div class="energy-pattern">
+                        <div class="building">
+                            <div class="floor floor-1"><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div></div>
+                            <div class="floor floor-2"><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div></div>
+                            <div class="floor floor-3"><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div></div>
+                            <div class="floor floor-4"><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div></div>
+                            <div class="floor floor-5"><div class="window w1"></div><div class="window w2"></div><div class="window w3"></div></div>
+                            <div class="roof"></div>
+                        </div>
+                        <div class="energy-waves">
+                            <div class="wave wave-1"></div>
+                            <div class="wave wave-2"></div>
+                            <div class="wave wave-3"></div>
+                        </div>
+                        <div class="energy-dots">
+                            <div class="dot dot-1"></div>
+                            <div class="dot dot-2"></div>
+                            <div class="dot dot-3"></div>
+                            <div class="dot dot-4"></div>
+                            <div class="dot dot-5"></div>
+                            <div class="dot dot-6"></div>
+                            <div class="dot dot-7"></div>
+                            <div class="dot dot-8"></div>
+                        </div>
+                        <div class="solar-panel">
+                            <div class="panel-section"></div>
+                            <div class="panel-section"></div>
+                            <div class="panel-section"></div>
+                            <div class="panel-section"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -693,7 +1144,48 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="/placeholder.svg?height=400&width=500" alt="NexiBuild team">
+                    <div class="about-visual">
+                        <div class="abstract-grid">
+                            <div class="grid-line grid-line-h" style="top: 25%"></div>
+                            <div class="grid-line grid-line-h" style="top: 50%"></div>
+                            <div class="grid-line grid-line-h" style="top: 75%"></div>
+                            <div class="grid-line grid-line-v" style="left: 25%"></div>
+                            <div class="grid-line grid-line-v" style="left: 50%"></div>
+                            <div class="grid-line grid-line-v" style="left: 75%"></div>
+                        </div>
+                        <div class="abstract-shapes">
+                            <div class="shape shape-1"></div>
+                            <div class="shape shape-2"></div>
+                            <div class="shape shape-3"></div>
+                        </div>
+                        <div class="energy-flow">
+                            <div class="flow-line flow-line-1"></div>
+                            <div class="flow-line flow-line-2"></div>
+                            <div class="flow-line flow-line-3"></div>
+                            <div class="flow-line flow-line-4"></div>
+                        </div>
+                        <div class="abstract-dots">
+                            <div class="dot dot-1"></div>
+                            <div class="dot dot-2"></div>
+                            <div class="dot dot-3"></div>
+                            <div class="dot dot-4"></div>
+                            <div class="dot dot-5"></div>
+                            <div class="dot dot-6"></div>
+                            <div class="dot dot-7"></div>
+                            <div class="dot dot-8"></div>
+                            <div class="dot dot-9"></div>
+                            <div class="dot dot-10"></div>
+                        </div>
+                        <div class="abstract-bars">
+                            <div class="bar bar-1"></div>
+                            <div class="bar bar-2"></div>
+                            <div class="bar bar-3"></div>
+                            <div class="bar bar-4"></div>
+                            <div class="bar bar-5"></div>
+                            <div class="bar bar-6"></div>
+                            <div class="bar bar-7"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
