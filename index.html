@@ -323,67 +323,10 @@
             font-size: 1.75rem;
         }
 
-        /* Testimonials section */
-        .testimonials {
-            padding: 5rem 0;
-            background-color: var(--light);
-        }
-
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .testimonial-text::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--gray-light);
-            position: absolute;
-            top: -1.5rem;
-            left: -1rem;
-            opacity: 0.5;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .author-details h4 {
-            margin-bottom: 0.25rem;
-        }
-
-        .author-details p {
-            color: var(--gray);
-            margin-bottom: 0;
-        }
-
         /* Contact section */
         .contact {
             padding: 5rem 0;
-            background-color: white;
+            background-color: var(--light);
         }
 
         .contact-content {
@@ -999,7 +942,6 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1223,46 +1165,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="text-center">
-                <h2>What Our Clients Say</h2>
-                <p>Success stories from organizations that have transformed their energy management</p>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>NexiBuild's solutions have transformed our facility operations. We've reduced our energy costs by 28% while improving occupant comfort. Their team's expertise and ongoing support have been invaluable to our sustainability journey.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/placeholder.svg?height=50&width=50" alt="John Smith">
-                        </div>
-                        <div class="author-details">
-                            <h4>John Smith</h4>
-                            <p>Facilities Director, Horizon Office Park</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        <p>Implementing NexiBuild's building management system has given us unprecedented visibility into our energy usage patterns. The real-time analytics and automated controls have helped us achieve our sustainability targets ahead of schedule.</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="/placeholder.svg?height=50&width=50" alt="Sarah Johnson">
-                        </div>
-                        <div class="author-details">
-                            <h4>Sarah Johnson</h4>
-                            <p>Sustainability Manager, Metro Healthcare</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1356,7 +1258,6 @@
                     <ul>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#benefits">Why Choose Us</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">News</a></li>
                     </ul>
@@ -1373,7 +1274,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 EcoSmart Energy. All rights reserved.</p>
+                <p>&copy; 2025 NexiBuild. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1418,7 +1319,7 @@
 
         // Animate elements on scroll
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.service-card, .benefit-card, .testimonial-card');
+            const elements = document.querySelectorAll('.service-card, .benefit-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1432,7 +1333,7 @@
         };
 
         // Set initial styles for animation
-        document.querySelectorAll('.service-card, .benefit-card, .testimonial-card').forEach(element => {
+        document.querySelectorAll('.service-card, .benefit-card').forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'all 0.6s ease-out';
